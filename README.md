@@ -116,3 +116,39 @@ Before you submit your solution, you need to save your progress with git.
 4. When you are ready to submit, click the ***Load Lab: Object Oriented Programming (OOP)- Part 2- Cash Register*** button in Canvas to launch CodeGrade.
   * Click on + Create Submission. Connect your repository for this lab.
   * For additional information on submitting assignments in CodeGrade: [Getting Started in Canvas](https://help.codegrade.com/for-students/getting-started/getting-started-in-canvas).
+
+  ## Cash Register — OOP Lab Part 2
+
+### Features
+- **Attributes**
+  - `total` — tracks total amount
+  - `discount` — percentage (0–100)
+  - `items` — list of added items
+  - `previous_transactions` — list of past transactions
+- **Methods**
+  - `add_item(item, price, quantity=1)` — adds items and updates total
+  - `apply_discount()` — applies percentage discount and prints new total
+  - `void_last_transaction()` — removes last transaction and updates total/items
+
+### Example
+
+```python
+from lib.cash_register import CashRegister
+
+# Create a register with 20% discount
+register = CashRegister(20)
+
+# Add some items
+register.add_item("apple", 2.00, 3)     # total = 6.00
+register.add_item("milk", 4.00, 1)      # total = 10.00
+
+# Apply discount
+register.apply_discount()               # prints: After the discount, the total comes to $8.
+
+# Undo last transaction
+register.void_last_transaction()        # removes milk, total = 6.00
+print(register.total)                   # 6.00
+
+### Screenshot
+
+![All tests passed](all_tests_passed.png)
