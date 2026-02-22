@@ -2,9 +2,95 @@
 
 Now that we’ve discussed more about object oriented design philosophies and techniques like decorators we will be looking at building more complex objects. In this case we will be building a cash register object to simulate different functions of a cash register for an e-commerce site. 
 
+## CashRegister Class Documentation
+
+### Overview
+The `CashRegister` class simulates a simple cash register for an e-commerce site, allowing you to add items, apply discounts, and void transactions.
+
+### Class Definition
+```python
+class CashRegister:
+    """A simple cash register class that tracks transactions and applies discounts."""
+    
+    def __init__(self, discount=0):
+        """
+        Initialize a CashRegister instance.
+        
+        Args:
+            discount (int): Optional discount percentage (0-100, default 0)
+        """
+```
+
+### Attributes
+- `discount`: Integer property between 0-100 representing discount percentage
+- `total`: Current total amount in the cash register
+- `items`: List of all items added (including multiples)
+- `previous_transactions`: List of transaction dictionaries with item, price, and quantity
+
+### Methods
+
+#### `add_item(item, price, quantity=1)`
+Adds items to the cash register.
+- `item`: Item name (string)
+- `price`: Price per item (float)
+- `quantity`: Number of items to add (integer, default 1)
+
+#### `apply_discount()`
+Applies discount to the total if discount > 0 and there are transactions.
+- Prints success message with updated total if discount is applied
+- Prints error message if no discount or no transactions
+
+#### `void_last_transaction()`
+Removes the last transaction from the cash register.
+- Subtracts the transaction's total from the register total
+- Removes items from items list
+
+### Example Usage
+```python
+# Create a cash register with 20% discount
+register = CashRegister(20)
+
+# Add items
+register.add_item("macbook air", 1000)
+register.add_item("eggs", 0.98, 2)
+register.add_item("tomato", 1.76, 3)
+
+# Apply discount
+register.apply_discount()  # Prints "After the discount, the total comes to $803."
+
+# Void last transaction
+register.void_last_transaction()
+```
+
 ## Tools & Resources
 * [GitHub Repo](https://github.com/learn-co-curriculum/oop-p2-cash-register-lab)
 * [Python Classes](https://docs.python.org/3/tutorial/classes.html)
+
+## Setup and Running Tests
+
+### Prerequisites
+- Python 3 installed
+- pip installed (Python package manager)
+- Node.js and npm installed (for lab setup)
+
+### Installation
+1. Fork and clone the repository
+2. Open the project in VSCode
+3. Install dependencies: `npm install`
+4. Install Python dependencies using Pipenv: `pipenv install`
+
+### Running Tests
+To run the tests and verify your implementation:
+
+```bash
+# Run all tests
+python -m pytest lib/testing/cash_register_test.py -v
+
+# Run specific test case
+python -m pytest lib/testing/cash_register_test.py::TestCashRegister::test_add_item -v
+```
+
+All tests should pass for a complete implementation.
 
 ## Instructions
 
