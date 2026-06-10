@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Cash Register Lab Preview</title>
+  <desc id="desc">A stylized preview card showing the completed cash register features and a sample transaction summary.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#e5e7eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <circle cx="1030" cy="120" r="120" fill="#f59e0b" opacity="0.18"/>
+  <circle cx="210" cy="560" r="170" fill="#10b981" opacity="0.15"/>
+
+  <text x="80" y="110" fill="#f9fafb" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700">Cash Register Lab</text>
+  <text x="80" y="155" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="24">Object-oriented checkout model with items, discounts, and transaction rollback</text>
+
+  <rect x="80" y="210" rx="28" ry="28" width="1040" height="390" fill="url(#card)" opacity="0.98"/>
+
+  <rect x="120" y="250" rx="20" ry="20" width="360" height="310" fill="#111827"/>
+  <text x="155" y="305" fill="#f9fafb" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Current Total</text>
+  <text x="155" y="395" fill="#fbbf24" font-family="Inter, Arial, sans-serif" font-size="86" font-weight="800">$800</text>
+  <text x="155" y="445" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="22">After 20% discount on a $1000 purchase</text>
+
+  <rect x="540" y="250" rx="20" ry="20" width="540" height="310" fill="#ffffff"/>
+  <text x="580" y="300" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Tracked state</text>
+
+  <text x="580" y="350" fill="#374151" font-family="Inter, Arial, sans-serif" font-size="22">• discount: integer between 0 and 100</text>
+  <text x="580" y="390" fill="#374151" font-family="Inter, Arial, sans-serif" font-size="22">• total: running checkout balance</text>
+  <text x="580" y="430" fill="#374151" font-family="Inter, Arial, sans-serif" font-size="22">• items: expanded item list</text>
+  <text x="580" y="470" fill="#374151" font-family="Inter, Arial, sans-serif" font-size="22">• previous_transactions: reversible history</text>
+  <text x="580" y="520" fill="#059669" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">add_item()  apply_discount()  void_last_transaction()</text>
+</svg>
