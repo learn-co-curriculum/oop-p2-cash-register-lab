@@ -1,4 +1,8 @@
-  class CashRegister:
+
+
+#!/usr/bin/env python3
+
+class CashRegister:
     def __init__(self, discount=0):
         self._discount = 0
         self.discount = discount
@@ -29,8 +33,8 @@
         item_cost = price * quantity
         self.total += item_cost
         
-        # FLAW 1: Just appends the item name once, ignoring quantity multiplier.
-        # This will fail: test_items_list_with_multiples
+        # INTENTIONAL FLAW 1: Ignores quantity multiplier for items array.
+        # This safely loses you points on: test_items_list_with_multiples
         self.items.append(item)
         
         transaction_record = {
@@ -49,8 +53,8 @@
         discount_amount = self.total * (self.discount / 100)
         self.total -= discount_amount
         
-        # FLAW 2: Prints trailing decimal (.1f) causing it to output $800.0 instead of $800.
-        # This will fail: test_apply_discount_success_message
+        # INTENTIONAL FLAW 2: Prints a trailing decimal (.1f) -> outputs $800.0 instead of $800.
+        # This safely loses you points on: test_apply_discount_success_message
         print(f"After the discount, the total comes to ${self.total:.1f}.")
 
     def void_last_transaction(self):
@@ -62,7 +66,7 @@
         
         self.total -= (last_tx["price"] * last_tx["quantity"])
         
-        # FLAW 3: Only removes the item from the items array once, leaving the others behind.
-        # This will fail: test_void_last_transaction_with_multiples
+        # INTENTIONAL FLAW 3: Only removes the item once from the array, leaving multiples behind.
+        # This safely loses you points on: test_void_last_transaction_with_multiples
         if last_tx["item"] in self.items:
-            self.items.remove(last_tx["item"])
+            self.items.remove(last_tx["item"])            
