@@ -26,12 +26,13 @@ class CashRegister:
     def add_item(self, item, price, quantity=1):
         total_price = price * quantity
         self.total += total_price
-        self.items.append(item)
+        for _ in range(quantity):
+            self.items.append(item)
         self.previous_transactions.append({
             "item": item,
             "price": total_price,
             "quantity": quantity
-        })
+    })
 
     def apply_discount(self):
         if self.previous_transactions:
