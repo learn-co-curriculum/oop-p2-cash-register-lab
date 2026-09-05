@@ -35,7 +35,7 @@ class CashRegister:
     })
 
     def apply_discount(self):
-        if self.previous_transactions:
+        if self.previous_transactions and self.discount > 0:
             discount_amount = self.total * self.discount // 100
             self.total -= discount_amount
             print(f"After the discount, the total comes to ${self.total}.")
