@@ -32,5 +32,11 @@ class CashRegister:
             "price": total_price,
             "quantity": quantity
         })
-    
+
+    def apply_discount(self):
+        if self.previous_transactions:
+            discounted_total = self.total - (self.total * self.discount / 100)
+            return f"Total after discount: ${discounted_total}"
+        else:
+            return "There is no discount to apply."
    
