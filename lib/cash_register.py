@@ -39,4 +39,11 @@ class CashRegister:
             return f"Total after discount: ${discounted_total}"
         else:
             return "There is no discount to apply."
-   
+    
+    def void_last_transaction(self):
+        if self.previous_transactions:
+            last_transaction = self.previous_transactions.pop()
+            self.total -= last_transaction["price"]
+            self.items.remove(last_transaction["item"])
+        else:
+            return "There is no transaction to void."
