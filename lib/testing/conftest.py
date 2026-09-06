@@ -1,9 +1,21 @@
 #!/usr/bin/env python3
 
-def pytest_itemcollected(item):
-    par = item.parent.obj
-    node = item.obj
-    pref = par.__doc__.strip() if par.__doc__ else par.__class__.__name__
-    suf = node.__doc__.strip() if node.__doc__ else node.__name__
-    if pref or suf:
-        item._nodeid = ' '.join((pref, suf))
+class CashRegister:
+
+    def __init__(self, discount=0):
+        self.discount = discount
+        self.total = 0
+        self.items = []
+        self.previous_transactions = []
+
+    @property
+    def discount(self):
+        return self._discount
+
+    @discount.setter
+    def discount(self, value):
+        if isinstance(value, int) and 0 <= value <= 100:
+            self._discount = value
+        else:
+            print("Not valid discount")
+
