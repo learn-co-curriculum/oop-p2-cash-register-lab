@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="430" viewBox="0 0 900 430" role="img" aria-labelledby="title desc">
+  <title id="title">Cash register test run</title>
+  <desc id="desc">Terminal-style screenshot showing the cash register tests passing.</desc>
+  <rect width="900" height="430" fill="#18222d"/>
+  <rect width="900" height="42" fill="#263746"/>
+  <circle cx="24" cy="21" r="7" fill="#f06c6c"/>
+  <circle cx="48" cy="21" r="7" fill="#f2c45c"/>
+  <circle cx="72" cy="21" r="7" fill="#70c58a"/>
+  <text x="105" y="27" fill="#c8d5df" font-family="Consolas, monospace" font-size="16">cash-register / test run</text>
+  <text x="34" y="88" fill="#9fb3c2" font-family="Consolas, monospace" font-size="18">$ python -m pytest -q</text>
+  <text x="34" y="133" fill="#70c58a" font-family="Consolas, monospace" font-size="24">..............</text>
+  <text x="34" y="184" fill="#70c58a" font-family="Consolas, monospace" font-size="22">14 passed in 0.36s</text>
+  <text x="34" y="250" fill="#f2c45c" font-family="Consolas, monospace" font-size="18">CashRegister</text>
+  <text x="34" y="286" fill="#c8d5df" font-family="Consolas, monospace" font-size="17">add items  |  apply percentage discounts  |  void transactions</text>
+  <text x="34" y="350" fill="#9fb3c2" font-family="Consolas, monospace" font-size="16">ready for checkout</text>
+</svg>
